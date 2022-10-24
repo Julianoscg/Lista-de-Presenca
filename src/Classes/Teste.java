@@ -1,10 +1,10 @@
 package Classes;
 
-public class Cadastro {
+public class Teste {
 
   public static void main(String[] a) {
 
-    Metodos metodo = new Metodos();
+    Menu metodo = new Menu();
 
     metodo.menu(); 
   
