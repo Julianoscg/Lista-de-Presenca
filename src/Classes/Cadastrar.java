@@ -1,6 +1,7 @@
 package Classes;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Cadastrar {
@@ -8,7 +9,7 @@ public class Cadastrar {
 	public void cadastrarAluno() {
 		
 		Menu metodo = new Menu();
-		//List<Aluno> dados = new ArrayList<Aluno>();
+		//ArrayList<Aluno> dados = new ArrayList<Aluno>();
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -30,22 +31,27 @@ public class Cadastrar {
 			System.out.print("Professor(a): ");
 			aluno.setProfessor(scan.nextLine());
 			
-			metodo.dados.add(aluno);
-			aluno.setId(metodo.dados.size());
-			cadastrandoAluno = false;
 
-			/*	System.out.print("\nFinalizar cadastro [S/N]? ");
-			String cadastro = scan.nextLine();
-			scan.next();
+			System.out.print("\nFinalizar cadastro [S/N]? ");
+			String cadastro = scan.next();
+			
+			boolean finalizar = cadastro.matches("[S-N]*");
+			
+			boolean finalizando = false;
+			while(!finalizando) {
+				if (finalizar == true) {
+					if(cadastro.equalsIgnoreCase("s")) {
+						metodo.dados.add(aluno);
+						aluno.MostrarCadastro();
+						finalizando = false;
+						
+					}
 
-			if (cadastro.equalsIgnoreCase("s")) {
-				
-
-				aluno.MostrarCadastro();
-				metodo.menu();
+				}
 				
 			}
-			System.out.print("\nCadastrar outro aluno? [S/N]");
+		}
+	/*		System.out.print("\nCadastrar outro aluno? [S/N]");
 			String novoAluno = scan.nextLine();
 			
 			System.out.println("");
@@ -55,8 +61,8 @@ public class Cadastrar {
 				metodo.menu();
 			} else if (novoAluno.equalsIgnoreCase("S")) {
 				cadastrarAluno();
-			}*/
+			}
 		}
-		scan.close();
-	}
+	scan.close(); */
+	} 	
 }
