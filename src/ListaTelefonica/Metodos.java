@@ -136,39 +136,17 @@ public class Metodos {
 		} else {
 			escreva("__________________________________");
 			escreva("Consulta de Contato");
-			escreva("Digite o nome ou número: ");
+			System.out.print("Digite o nome: ");
 			String entrada = scan.nextLine();
-		
-			boolean validaEntrada = entrada.matches("[0-9]*");
-			
-			if(validaEntrada == true) {
-				for (Contato contato : this.contatos) {
-					if (contato.getTelefone().equalsIgnoreCase(entrada)) {
-						System.out.println(contato);
-						break;
-					} 
-					else {
-						System.out.println("Contato não encontrado!");
-						consultarAluno();
-					}
-				}
-			} else {
-				for (Contato contato : this.contatos) {
-					
-					if (contato.getNome().equalsIgnoreCase(entrada)) {
-						System.out.println(contato);
-						break;
-					} 
-					else {
-						System.out.println("Contato não encontrado!");
-						consultarAluno();
-					}
+
+			for (Contato contato : this.contatos) {
+				if (contato.getNome().equalsIgnoreCase(entrada)) {
+					System.out.println(contato);
+					break;
 				}
 			}
-			
-			
 			escreva("__________________________________");
-				menu();
+			menu();
 		}
 	}
 

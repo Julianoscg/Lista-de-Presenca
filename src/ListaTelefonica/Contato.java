@@ -34,7 +34,8 @@ public class Contato {
 	public String toString() {
 		return "Nome      : " + this.nome + 
 				"\nTelefone  : " + this.telefone + 
-				"\nE-mail    : " + this.email;
+				"\nE-mail    : " + this.email + 
+				"\n--------------------";
 	}
 
 }
