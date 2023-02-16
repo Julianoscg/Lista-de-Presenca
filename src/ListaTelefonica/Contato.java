@@ -1,31 +1,10 @@
 package ListaTelefonica;
 
-import java.util.Objects;
-
 public class Contato {
 
-	String nome;
-	String telefone;
-	String email;
-	
-
-	/*
-	 * Aluno(String nome, String turma, int matricula) { this.nome = nome;
-	 * this.turma = turma; this.matricula = matricula; }
-	 */
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Contato other = (Contato) obj;
-		return Objects.equals(nome, other.nome);
-	}
+	private String nome;
+	private String telefone;
+	private String email;
 
 	public String getNome() {
 		return nome;
@@ -53,12 +32,9 @@ public class Contato {
 
 	@Override
 	public String toString() {
-		
-		String s = "Nome      : " + this.nome + 
+		return "Nome      : " + this.nome + 
 				"\nTelefone  : " + this.telefone + 
 				"\nE-mail    : " + this.email;
-		
-		return s;
 	}
 
 }

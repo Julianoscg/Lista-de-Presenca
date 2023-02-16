@@ -43,8 +43,6 @@ public class Metodos {
 		}
 	}
 
-	int matricula = 0;
-
 	// Metodo para adicionar Aluno
 
 	void adicionarAluno() {
@@ -124,15 +122,10 @@ public class Metodos {
 			menu();
 		} else {
 			escreva("\n    --- Lista de Contatos ---");
-			for (int i = 0; i < contatos.size(); i++) {
-				escreva("__________________________________");
-				System.out.println(contatos.get(i));
-
-			}
+			this.contatos.forEach(System.out::println);
 			escreva("__________________________________");
 			menu();
 		}
-		scan.close();
 	}
 
 	// Metodo de consulta de Contato
@@ -149,10 +142,9 @@ public class Metodos {
 			boolean validaEntrada = entrada.matches("[0-9]*");
 			
 			if(validaEntrada == true) {
-				for (int i = 0; i < contatos.size(); i++) {
-					Contato c = contatos.get(i);
-					if (c.getTelefone().equalsIgnoreCase(entrada)) {
-						System.out.println(contatos.get(i));
+				for (Contato contato : this.contatos) {
+					if (contato.getTelefone().equalsIgnoreCase(entrada)) {
+						System.out.println(contato);
 						break;
 					} 
 					else {
@@ -161,10 +153,10 @@ public class Metodos {
 					}
 				}
 			} else {
-				for (int i = 0; i < contatos.size(); i++) {
-					Contato c = contatos.get(i);
-					if (c.getNome().equalsIgnoreCase(entrada)) {
-						System.out.println(contatos.get(i));
+				for (Contato contato : this.contatos) {
+					
+					if (contato.getNome().equalsIgnoreCase(entrada)) {
+						System.out.println(contato);
 						break;
 					} 
 					else {
